@@ -1,0 +1,19 @@
+<div *ngIf="deleteUserAcnt"  class="container mt-5">
+    <!-- *ngIf="deleteUserAcnt" -->
+    <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4 mt-5 border p-3" style="border: 2px solid black;">
+            <div class="col text-center  border p-5">
+                <h3 class="text-center">Are you sure!! <br>
+                    Do you want to delete this account?</h3>
+                
+                <button (click)="deleteFromChild()"  class="btn btn-dark">Yes</button>
+                <!-- (click)="deleteFromChild()" -->
+                <button (click)="cancel()" class="btn btn-dark ms-3">No</button>
+                <!-- (click)="cancel()" -->
+                
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>

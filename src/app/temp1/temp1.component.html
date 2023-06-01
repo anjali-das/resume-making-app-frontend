@@ -1,0 +1,164 @@
+    <!-- log out -->
+<div *ngIf="logoutStatus"
+style="width: 100%;height: 100vh;" class=" justify-content-center mt-5 text-center">
+<div class="col text-center mt-5">
+  <h1 class="mt-5 text-dark text-center">Pleas wait.... <br> while your logging out ...</h1>
+
+</div> 
+ <!-- <img src="https://open.assembly.go.kr/images/ajax_loader.gif" alt=""> -->
+  <div class="col text-center justify-content-evently mt-4">
+  <img width="250px" 
+    src="https://cdn.dribbble.com/users/1797873/screenshots/5310497/logout.gif" alt="">
+  </div>
+</div>
+
+<!--delete successMsg -->
+<div *ngIf="deleteSuccessMsg" style="width: 100%;height: 100vh;" class="d-flex justify-content-center">
+    <h1 class="mt-5 text-danger text-center">{{deleteSuccessMsg}}</h1>
+  </div>
+  
+  <!-- delete confirm child -->
+  <!-- <app-delete-confirm (onDelete)="deleteFromParent()" (onCancel)="cancelDeleteConfirm()" [deleteUserAcnt]="userdelete"></app-delete-confirm> -->
+  <app-delete-confirm  (onDelete)="deleteFromParent()" (onCancel)="cancelDeleteConfirm()" [deleteUserAcnt]="userdelete"></app-delete-confirm>
+  <!-- <app-delete-confirm  (onDelete)="deleteFromParent1()" (onCancel)="cancelDeleteConfirm()" [deleteExperince]="userdelete"></app-delete-confirm> -->
+ 
+    
+<!-- Navigation-->
+
+<ng-container *ngIf="!deleteConfirmStatus" >
+    <!-- *ngIf="!deleteConfirmStatus" -->
+    <div *ngIf="!logoutStatus"  >
+        <!-- *ngIf="!logoutStatus" -->
+        <nav  *ngIf="!deleteConfirmStatus" class="navbar navbar-expand-lg  bg-dark ">
+            <!-- *ngIf="!deleteConfirmStatus" -->
+            <!-- navbar -->
+            
+            <div class="container px-4 px-lg-5">
+                     <a style="margin-left: -120px;" class="navbar-brand text-light" routerLink=""> <img style="width: 50px; height: 50px;"
+                            src="https://media.istockphoto.com/id/1368731656/vector/letter-r-beauty-flower-logo-with-creative-concept-for-company-business-decorative-flower.jpg?s=612x612&w=0&k=20&c=31hDWiML_VvjR6P_nUk2c17fn6KkmtbNtIg5KShTDiU="
+                            alt="resume-img"> RESUMATE</a>
+            
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                            class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                            <li class="nav-item">
+                            </li>
+                        </ul>
+                        <form class="d-flex align-items-center">
+                            <!-- delete button -->
+                            <!-- <a class="btn text-light" (click)="deleteAccount()">
+                                <i class="fa-solid fa-trash fa-shake text-danger"></i>                                
+                                DELETE
+                            </a> -->
+                            <!-- login --> 
+                           <!-- <div *ngIf="!loginsuccess">
+                                <a class="btn text-light" routerLink="/login">
+                                    <i class="fa-solid fa-user fa-beat text-dark"></i>
+                                    LOG IN
+                                    <span class="badge bg-light text-dark ms-1 rounded-pill"></span>
+                                </a>
+                           </div> -->
+            
+                           <div >
+                            <a (click)="logout()" class="btn text-light" routerLink="/login">
+                                <i class="fa-solid fa-user fa-beat text-light"></i>
+                                LOG OUT
+                                <span class="badge bg-light text-dark ms-1 rounded-pill"></span>
+                            </a>
+                       </div>
+                       
+                    </form>
+                </div>
+            </div>
+        </nav>
+        
+        
+        
+            <div class="col-4 mt-5 column1">
+                <div class="row">
+        
+                <form>
+                    <div *ngFor="let detail of headerdetails" class="head text-light">
+                        <h2 class="text-center">{{detail.firstname}} {{detail.lastname}} </h2>
+                        <p class="text-center">{{detail.city}} | {{detail.phonenumber}} | {{detail.email}}</p>
+                    </div>
+                    <!-- summery -->
+                    <h4 style="margin-left: 20px;" class="text-primary mt-3 heading">Summery</h4>
+           <div *ngFor="let skill of skilldetails">
+                        <p class="text-decoration-line summery d-flex" style="margin-left: 25px;">{{skill.summery}}</p>
+           </div>
+                    <hr class="w-25 " style="margin-left: 20px;">
+            
+                    <!-- experience -->
+                    <h4 style="margin-left: 20px; " class="text-primary heading">Experience</h4>
+                    <div  *ngFor="let experience of experiencedetails">
+                     <p  class="experience"><span style="font-size: 20px;">{{experience.jobtitle}}</span> | {{experience.startdate}} - {{experience.enddate}}</p>
+                    <p   class="experience"><span style="font-size: 17px;">{{experience.employer}}</span> - {{experience.city}},{{experience.country}}</p>
+                       </div>
+                       <hr class="w-25 " style="margin-left:20px;">
+            
+                    <!-- skills -->
+                    <h4 style="margin-left: 20px;" class="text-primary heading">Skills</h4>
+            
+                    <div class="container">
+                        <div *ngFor="let skill of skilldetails" class="row">
+                            <div class="col-6">
+                                <ul class="list-group">
+                                    <li  class="list-group-items ms-5">{{skill.skill}} </li>
+
+                                    <!-- <li class="list-group-items ms-5"> </li>
+                                    <li class="list-group-items ms-5">Lorem ipsum dolor</li> -->
+                                </ul>
+                            </div>
+                            <!-- <div class="col-6">
+                                <ul class="list-group">
+                                    <li class="list-group-items ms-5">Lorem ipsum dolor </li>
+                                    <li class="list-group-items ms-5">Lorem ipsum dolor </li>
+                                    <li class="list-group-items ms-5">Lorem ipsum dolor</li>
+                                </ul>
+                            </div> -->
+                        </div>
+                      </div>
+                    <hr class="w-25 " style="margin-left:20px;">
+            
+            
+                    <!-- education -->
+                    <h4 style="margin-left: 20px;" class="text-primary heading">Education</h4>
+        <div *ngFor="let education of educationdetails">
+                        <p class="education"><span class="fw-bolder" style="font-size:large;">{{education.schoolname}}</span>,{{education.schoollocation}}</p>
+            <h6 style="margin-left:30px;font-size: 20px;" >{{education.qualification}} - {{education.fieldofstudy}}</h6>
+        </div>            <hr class="w-25 " style="margin-left:20px;">
+            
+                    <!-- interest and hobbies -->
+                    <h4 style="margin-left: 20px;" class="text-primary heading">Intrest and Hobbies</h4>
+                   <div *ngFor="let skill of skilldetails">
+                        <ul class="list-group">
+                            <!-- <p class="recreate">Recreate Football League</p> -->
+                            <!-- <li class="list-group-items ms-5">Team Captian</li> -->
+                            <li class="list-group-items ms-5">{{skill.hobbies}} </li>
+                        </ul>
+                   </div>
+            
+                    <!-- <ul>
+                        <p class=" red">Red Cross Volunteer</p>
+                        <li class="list-group-items volunteer">Taught cpr and First Aid etc</li>
+                    </ul> -->
+            
+                    <!-- <hr class="w-25 " style="margin-left:20px;"> -->
+                </form>
+            </div>
+            </div>
+            
+           
+    </div>
+    <div class="pt-2 text-center mt-4">
+        <input class="btn btn-danger btn-lg borderx " type="submit" value="Back"  routerLink="/skills"/>
+        <input (click)="printpage()" class="btn btn-dark btn-lg ms-5 text-light" type="submit" value="Download" />
+    
+      </div>
+    
+</ng-container>
+    
+      <!-- </div> -->

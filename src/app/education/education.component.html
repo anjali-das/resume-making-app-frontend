@@ -1,0 +1,122 @@
+<section style="height: 800px;" class=" bg-dark">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <form [formGroup]="educationForm" (ngSubmit)=education()>
+
+                    <div class="card card-registration my-4">
+                        <div class="row g-0">
+                            <div class="col-xl-6 d-none d-xl-block">
+                                <img src="https://varthana.com/school/wp-content/uploads/2022/09/B37.jpg"
+                                    alt="Sample photo" class="img-fluid "
+                                    style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card-body p-md-5 text-black">
+                                    <h3 class="mb-5 text-uppercase">Add your <span class="text-danger">education</span>
+                                    </h3>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <label class="form-label" for="form3Example1m">School Name</label>
+
+                                                <input formControlName="schoolname" name="schoolname" type="text"
+                                                    id="form3Example1m" class="form-control form-control-lg" />
+                                            </div>
+
+                                            <!-- school name error msg -->
+                                            <div *ngIf="this.educationForm.get('schoolname')?.errors&&this.educationForm.get('schoolname')?.touched"
+                                                class="text-danger mb-3">Invalid School Name</div>
+
+
+
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <label class="form-label" for="form3Example1n">School Location</label>
+
+                                                <input formControlName="schoollocation" name="schoollocation"
+                                                    type="text" id="form3Example1n"
+                                                    class="form-control form-control-lg" />
+                                            </div>
+
+
+                               <!-- school location error msg -->
+                               <div *ngIf="this.educationForm.get('schoollocation')?.errors&&this.educationForm.get('schoollocation')?.touched"
+                               class="text-danger mb-3">Invalid School Location</div>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <label class="form-label" for="form3Example1m1">Qualification</label>
+
+                                                <input formControlName="qualification" name="qualification" type="text"
+                                                    id="form3Example1m1" class="form-control form-control-lg" />
+                                            </div>
+
+
+
+                               <!-- qualification error msg -->
+                               <div *ngIf="this.educationForm.get('qualification')?.errors&&this.educationForm.get('qualification')?.touched"
+                               class="text-danger mb-3">Invalid Qualification</div>     
+  
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <label class="form-label" for="form3Example1m">Field of Study</label>
+
+                                                <input formControlName="fieldofstudy" name="fieldofstudy" type="text"
+                                                    id="form3Example1m" class="form-control form-control-lg" />
+                                            </div>
+
+
+                                    <!-- field of study error msg -->
+                                    <div *ngIf="this.educationForm.get('fieldofstudy')?.errors&&this.educationForm.get('fieldofstudy')?.touched"
+                                    class="text-danger mb-3">Invalid Field of Study</div>
+
+
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <div class="form-outline">
+                                                <label class="form-label" for="form3Example1n">Year of
+                                                    Graduation</label>
+
+                                                <input formControlName="yearofgraduation" name="yearofgraduation"
+                                                    type="year" id="form3Example1n"
+                                                    class="form-control form-control-md" />
+                                            </div>
+
+                                    <!-- year of graduation error msg -->
+                                    <div *ngIf="this.educationForm.get('yearofgraduation')?.errors&&this.educationForm.get('yearofgraduation')?.touched"
+                                    class="text-danger mb-3">Invalid Year of Passing</div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="pt-2 text-center mt-4">
+                                        <input class="btn btn-danger btn-lg borderx " type="submit" value="Back"
+                                            routerLink="/experience" />
+                                        <input class="btn btn-dark btn-lg ms-5 text-light" type="submit"
+                                            value="Continue"  />
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                </div>
+        </div>
+    </div>
+</section>

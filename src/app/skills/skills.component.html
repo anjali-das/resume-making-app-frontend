@@ -1,0 +1,42 @@
+
+<div class="body" >
+    <!-- skills -->
+    
+    
+    <form [formGroup]="skillForm" (ngSubmit)="skill()" >
+        <h2 class="  text-center fw-bolder">Add your <span class="text-danger">skills</span></h2>
+        
+        
+        <textarea  formControlName="skill" name="skill" class="mt-5"  style="margin-left: 500px;" cols="60" rows="5"></textarea>
+       
+       
+    
+    <!-- summery -->
+    
+    <h2 class="ms-5 mt-5 text-center fw-bolder">Add your <span class="text-danger" >summery</span></h2>
+    
+    
+    
+        <textarea  formControlName="summery" name="summery" class="mt-5"  style="margin-left: 500px;" cols="60" rows="5"></textarea>
+        
+       
+        
+    
+    <div  style="margin-top: 100px;">
+              <h2 class=" text-center mt-5 heading fw-bolder">Intrest and <span class="text-danger" >Hobbies</span></h2>
+              <div style="margin-left: 470px;width: 600px;" class="form-floating mb-3 mt-5 border p-4">
+               <input formControlName="hobbies" name="hobbies" type="text" class="form-control "
+                    id="floatingInput" placeholder="Hobbies"  >
+                <label class="text-danger-emphasis ms-5 fw-bolder" for="floatingInput">Hobbies</label>
+            </div> 
+    </div>
+    
+    <div class="pt-2 text-center mt-5">
+        <input class="btn btn-danger btn-lg borderx " type="submit" value="Back"  routerLink="/education"/>
+        <input class="btn btn-dark btn-lg ms-5 text-light" type="submit" value="Continue"  />
+    
+      </div>
+    
+    
+    </form>
+</div>

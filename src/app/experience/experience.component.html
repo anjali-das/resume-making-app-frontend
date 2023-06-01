@@ -1,0 +1,124 @@
+
+
+<section class=" body vh-100">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <h1 style="margin-left:-50px;" class="mt-5 text-center fw-bolder">Add your <span class="text-danger">experience</span></h1>
+
+          <div>
+            <div class="card-body p-4 p-md-5">
+              <form [formGroup]="experienceForm" (ngSubmit)="experience()">
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline">
+                      <input formControlName="jobtitle" name="jobtitle" type="text" id="firstName" class="form-control form-control-md" placeholder="JOB TITLE" />
+                      <!-- <label class="form-label" for="firstName">First Name</label> -->
+                    </div>
+                      
+                    
+                    <!-- jobtitle error msg -->
+                <div
+                *ngIf="this.experienceForm.get('jobtitle')?.errors&&this.experienceForm.get('jobtitle')?.touched"
+                class="text-danger mb-3">Invalid Jobtitle</div>
+
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline">
+                      <input formControlName="employer" name="employer" type="text" id="lastName" class="form-control form-control-md"placeholder="EMPLOYER" />
+                      <!-- <label class="form-label" for="lastName">Last Name</label> -->
+                    </div>
+                     
+                    <!-- employer error msg -->
+                 <div
+                 *ngIf="this.experienceForm.get('employer')?.errors&&this.experienceForm.get('employer')?.touched"
+                 class="text-danger mb-3">Invalid Employer</div>
+                </div>
+                   </div>
+                
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4 d-flex align-items-center">
+  
+                    <div class="form-outline  w-100">
+                      <input formControlName="city" name="city" type="text" class="form-control form-control-md" id="birthdayDate" placeholder="CITY" />
+                      <!-- <label for="birthdayDate" class="form-label">Birthday</label> -->
+                    </div>
+
+                     <!-- city error msg -->
+                 <div
+                 *ngIf="this.experienceForm.get('city')?.errors&&this.experienceForm.get('city')?.touched"
+                 class="text-danger mb-3">Invalid city</div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline w-100">
+                        <input formControlName="country" name="country" type="text" class="form-control form-control-md" id="birthdayDate" placeholder="COUNTRY" />
+                        <!-- <label for="birthdayDate" class="form-label">Birthday</label> -->
+                      </div>
+                       
+                      <!-- country error msg -->
+                      <div
+                      *ngIf="this.experienceForm.get('country')?.errors&&this.experienceForm.get('country')?.touched"
+                      class="text-danger mb-3">Invalid Country</div>
+                        
+                    </div>
+  
+                  </div>
+                  
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <div class="form-outline">
+                        <label class="form-label" for="emailAddress">START DATE</label>
+                        <input formControlName="startdate" name="strtdate" type="date" id="emailAddress" class="form-control form-control-md" placeholder="START DATE" />
+                    </div>
+
+                     <!-- startdate error msg -->
+                 <div
+                 *ngIf="this.experienceForm.get('startdate')?.errors&&this.experienceForm.get('startdate')?.touched"
+                 class="text-danger mb-3">Invalid Start Date</div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4 pb-2">
+  
+                    <div class="form-outline">
+                        <label class="form-label" for="phoneNumber">END DATE</label>
+
+                      <input formControlName="enddate" name="enddate" type="date"  class="form-control form-control-md" />
+
+                    </div>
+                     
+                    <!-- enddate error msg -->
+                 <div
+                 *ngIf="this.experienceForm.get('enddate')?.errors&&this.experienceForm.get('enddate')?.touched"
+                 class="text-danger mb-3">Invalid Enddate</div>
+  
+                  </div>
+                </div>
+
+                     <!-- experience ErrorMsg -->
+            <div class="mt-5 mb-2 text-danger fw-bolder">{{experienceErrorMsg}}</div>
+
+  
+               
+  
+                <div class="pt-2 text-center mt-4">
+                    <input class="btn btn-danger btn-lg borderx " type="submit" value="Back"  routerLink="/header-detail"/>
+                    <input class="btn btn-dark btn-lg ms-5 text-light" type="submit" value="Continue"  />
+                
+                  </div>
+  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

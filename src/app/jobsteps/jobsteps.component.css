@@ -1,0 +1,23 @@
+ /* .step1:img{
+    transition: 3s ease;
+}
+.step1:hover{
+    
+        transform: scale(1.2);
+        transition: 2s ;
+      
+}  */
+
+.step1 {
+    transition: 5s;
+}
+
+.step1:hover {
+transform: scale(1.2);
+transition: 2s;
+}
+
+.jobstepheading{
+    font-family: 'DM Serif Display', serif;
+    font-size: 50px;
+}

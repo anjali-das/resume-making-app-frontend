@@ -1,0 +1,169 @@
+<!-- <h3 class="text-center text-danger mt-4 fw-bolder">Register</h3>
+<div>
+    <div>
+       <div class="container border rounded p-3 mt-5 " style="width:35%;">
+            <form [formGroup]="registerForm" class=" rounded p-5"(ngSubmit)="register()" >
+                <div class="form-floating mb-3"> -->
+
+<!-- username -->
+  <!-- <input formControlName="username" name="username" type="text" class="form-control">
+                          <label class="text-primary-emphasis">Username</label>
+                  </div>   -->
+                  
+                  
+                  <!-- username error msg -->
+                  <!-- <div *ngIf="this.registerForm.get('username')?.errors&&this.registerForm.get('username')?.touched"
+                    class="text-danger mb-3">Invalid Username</div>
+ -->
+  <!--password  -->
+  <!-- <div class="form-floating mb-3">
+                      <input formControlName="password" name="password" type="password" class="form-control" >
+                      <label class="text-primary-emphasis">Password</label>
+                  </div> -->
+
+                  
+                            <!-- password error msg -->
+          <!-- <div *ngIf="this.registerForm.get('password')?.errors&&this.registerForm.get('password')?.touched"
+          class="text-danger mb-3">Invalid Password</div> -->
+
+  
+  <!-- confirm password -->
+  
+  <!-- <div class="form-floating mb-3">
+    <input formControlName="confirmpassword" name="confirmpassword" type="password" class="form-control">
+    <label class="text-primary-emphasis">Confirm Password</label>
+  </div> -->
+
+
+                            <!-- confirm password error msg -->
+          <!-- <div *ngIf="this.registerForm.get('confirmpassword')?.errors&&this.registerForm.get('confirmpassword')?.touched"
+          class="text-danger mb-3">Invalid Password</div>
+ -->
+
+
+
+
+  <!-- <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+    <button type="button" class="btn btn-primary btn-lg">Register</button>
+  </div>
+</form>
+</div>
+ -->
+
+
+
+
+
+
+
+
+
+
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+
+
+<!-- register success msg -->
+<div *ngIf="registerSuccessMsg" style="width: 100%; height: 100vh;"
+  class="container d-flex justify-content-center align-items-center text-center">
+  <h3 class="text-primary"><img width="90px" src="https://icon-library.com/images/load-icon-gif/load-icon-gif-28.jpg"
+      alt="spinner">Your data's are getting registered...Please wait...</h3>
+</div>
+
+<div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div *ngIf="!registerSuccessMsg" class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+             <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+                <form [formGroup]="registerForm" class="mx-1 mx-md-4" (ngSubmit)="register()">
+
+                  <div *ngIf="!registerSuccessMsg" class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input name="username" formControlName="username" type="text"
+                        class="form-control" placeholder="Username" />
+                    </div>
+                  </div>
+
+                  <!-- username error msg -->
+                  <div *ngIf="this.registerForm.get('username')?.errors&&this.registerForm.get('username')?.touched"
+                    class="text-danger mb-3">Invalid Username</div>
+
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input name="email" formControlName="email" type="text"
+                          class="form-control" placeholder="Email" />
+                      </div>
+                    </div>
+
+                    
+                  <!-- email error msg -->
+                  <div *ngIf="this.registerForm.get('email')?.errors&&this.registerForm.get('email')?.touched"
+                    class="text-danger mb-3">Invalid Email</div>
+
+
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input name="password" formControlName="password" type="password" class="form-control"
+                        placeholder="Password" />
+                    </div>
+                  </div>
+
+                            <!-- password error msg -->
+          <div *ngIf="this.registerForm.get('password')?.errors&&this.registerForm.get('password')?.touched"
+          class="text-danger mb-3">Invalid Password</div>
+
+
+
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input name="confirmpassword" formControlName="confirmpassword" type="password"
+                        class="form-control" placeholder="Confirm Your Password" />
+                    </div>
+                  </div>
+
+                            <!-- confirm password error msg -->
+           <div *ngIf=" this.registerForm.value.password != this.registerForm.value.confirmpassword && registerForm.get('confirmpassword')?.errors&&this.registerForm.get('confirmpassword')?.touched"
+          class="text-danger mb-3">Password does not match</div> 
+ 
+
+                 <!-- registerErrorMsg -->
+                 <div class="mt-5 mb-2 text-danger fw-bolder">{{registerErrorMsg}}</div>
+                  
+                 
+                 <div class="form-check d-flex justify-content-center mb-5">
+                      <label class="form-check-label">
+                        Already Have an Account <a routerLink=""
+                          data-bs-dismiss="modal" aria-label="Close">Login</a>
+                      </label>
+                    </div>
+  
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button type="submit" class="btn btn-dark btn-lg">Register</button>
+                    </div>
+                  </form>
+
+              </div>
+              <div  class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                <img  src="https://www.mediabistro.com/wp-content/uploads/2023/01/bigstock-Candidate-Search-Concept-Youn-467285863-620x484.jpg"
+                  class="img-fluid" alt="Sample image">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

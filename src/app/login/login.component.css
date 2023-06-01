@@ -1,0 +1,15 @@
+.login{
+    margin-top: 80px;
+    margin-left: 200px;
+    height: 550px;
+    width: 600px;
+}
+.loginheading{
+    font-family: 'Satisfy', cursive;
+    color: black;
+    /* font-weight: 50px; */
+    font-size: 35px;
+}
+.navbar{
+    background-color:black
+  }

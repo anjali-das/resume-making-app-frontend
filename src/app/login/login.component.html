@@ -1,0 +1,90 @@
+
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg">
+    <div class="container px-4 px-lg-5">
+             <a style="margin-left: -120px;" class="navbar-brand text-light" routerLink=""> <img style="width: 50px; height: 50px;"
+                    src="https://media.istockphoto.com/id/1368731656/vector/letter-r-beauty-flower-logo-with-creative-concept-for-company-business-decorative-flower.jpg?s=612x612&w=0&k=20&c=31hDWiML_VvjR6P_nUk2c17fn6KkmtbNtIg5KShTDiU="
+                    alt="resume-img"><span class="resumate"> RESUMATE</span></a>
+    
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item">
+                    </li>
+                </ul>
+                <form class="d-flex align-items-center">
+                    
+                    <!-- login -->
+                   <div>
+                        <a class="btn text-light" routerLink="">
+                            <i class="fa-sharp fa-solid fa-message fa-flip text-danger"></i>
+                            CONTACT US
+                            <span class="badge bg-light text-dark ms-1 rounded-pill"></span>
+                        </a>
+                   </div>
+    
+                  
+               </form>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- login design -->
+
+<div class="row">
+    <div class="col-6">
+        <div class=" login">
+            <div class="mt-3 text-center ">
+                <a  class="navbar-brand" routerLink=""> <img style="width: 50px; height: 50px;"
+                    src="https://media.istockphoto.com/id/1368731656/vector/letter-r-beauty-flower-logo-with-creative-concept-for-company-business-decorative-flower.jpg?s=612x612&w=0&k=20&c=31hDWiML_VvjR6P_nUk2c17fn6KkmtbNtIg5KShTDiU="
+                    alt="resume-img"> RESUMATE</a>
+                <h3 class="text-center mt-5"><span class="loginheading">Sign in to your Account</span></h3>
+            </div> 
+        
+            <!-- login Form -->
+             <form [formGroup]="loginForm" class=" rounded p-5" (ngSubmit)="login()">
+                <div class="form-floating mb-3">
+                    <!-- username -->
+                 <input formControlName="username" name="username" type="text" class="form-control "
+                        id="floatingInput" placeholder="name@example.com" >
+                    <label class="" for="floatingInput">Username</label>
+                </div> 
+            
+                <!-- username error msg -->
+                <div *ngIf="this.loginForm.get('username')?.errors&&this.loginForm.get('username')?.touched" class="text-danger mb-3">Invalid Username</div> 
+            
+            
+            
+              <!--password  -->
+                <div class="form-floating mb-3">
+                    <input formControlName="password" name="password" type="password" class="form-control"
+                        id="floatingInput" placeholder="name@example.com">
+                    <label class="" for="floatingInput">Password</label>
+                </div>
+            
+            
+                <!-- password error msg -->
+            <div *ngIf="this.loginForm.get('password')?.errors&&this.loginForm.get('password')?.touched" class="text-danger mb-3">Invalid Password</div>
+
+            <div class="mt-2 mb-2 text-danger fw-bolder">{{loginErrorMsg}}</div>
+
+
+            
+            <div class="text-center mt-4">
+                   <button class="btn btn-dark text-light fw-bolder" >Log In</button>
+                </div>
+            
+                <div  class="text-center mt-4">
+                    <h5>Don't have an account? <a  style="color: rgb(221, 46, 75); text-decoration: none;" routerLink="/register">Sign Up</a>
+                    </h5>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-6">
+        <img style="height: 500px; margin-top: 100px;width: 700px;margin-right: 500px;" src="https://media.istockphoto.com/id/1368151370/photo/user-typing-login-and-password-cyber-security-concept.jpg?b=1&s=170667a&w=0&k=20&c=wm6YUMs03Bup4_9XcQaX61L711qJxAUExEJp_PWO8gI="
+        class="img-fluid" alt="Phone image">    
+    </div>
+</div>

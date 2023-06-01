@@ -1,0 +1,134 @@
+
+/* template 1 style */
+.column1{
+    border: 3px solid whitesmoke;
+    box-shadow: 0 10px 20px rgb(83, 76, 76);
+    height: 698px;
+    width: 450px;
+    margin-left:-10px;
+    
+}
+.column1:hover{
+    border: 4px solid rgb(237, 164, 29);
+}
+
+
+.head{
+background-color:rgb(3, 3, 69) ;
+width: 100%;
+}
+.summery{
+    text-align: justify;
+    font-size: 10px;
+    float:right ;
+   }
+   .experience{
+    text-align: justify;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 10px;
+   }
+   .education{
+    text-align: justify;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 10px;
+   }
+   .recreate{
+    font-size: 12px;
+    margin-left: 20px;
+   }
+   .list-group-items{
+    font-size: 14px;
+   }
+   .volunteer{
+    margin-left: 20px;
+   }
+   .red{
+    margin-left: -9px;
+    font-size: 12px;
+   }
+   .heading{
+    font-size: 12px;
+   }
+   .list-group-items{
+    font-size: 10px;
+    margin-top: -3px;
+   }
+   .list-group{
+    margin-top: 10px;
+   }
+   /* template 2 style */
+   .column2{
+    border: 3px solid whitesmoke;
+    box-shadow: 0 10px 20px rgb(83, 76, 76);
+    height: 698px;
+    width: 500px;
+    margin-left: -100px;
+   }
+   .column2:hover{
+    border: 4px solid rgb(237, 164, 29);
+}
+   .left_div{
+    background-color: rgb(78, 190, 194);
+    width: 190px;
+    height: 695px;
+    margin-left: -14px;
+    margin-top: -80px;
+   }
+   hr{
+    border: 3px solid white;
+    margin-top: 80px;
+    margin-left: 20px;
+    width: 80px;
+   }
+   .skills{
+    font-size: 10px;
+    margin-left: 40px;
+    color: white;
+   }
+   .place{
+    font-size: 10px;
+   }
+   .retail_associate{
+    font-size: 12px;
+   }
+.diploma{
+    font-size: 12px;
+    margin-top: -10px;
+}
+/* template 3 style */
+.column3{
+    border: 3px solid whitesmoke;
+    box-shadow: 0 10px 20px rgb(83, 76, 76);
+    height: 698px;
+    width: 490px;
+    margin-left: 10px;
+}
+.column3:hover{
+    border: 4px solid rgb(237, 164, 29);
+    
+}
+.heading3{
+    background-color: rgb(193, 221, 222);
+    width: 100%;
+    height: 50px;
+    
+}
+.recreate3{
+    font-size: 10px;
+    margin-left: 20px;
+}
+.red3{
+    font-size: 10px;
+}
+   
+   
+   
+   
+   
+  
+   
+   
+   
+  

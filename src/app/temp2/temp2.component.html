@@ -1,0 +1,154 @@
+    <!-- log out -->
+    <div *ngIf="logoutStatus"
+    style="width: 100%;height: 100vh;" class=" justify-content-center mt-5 text-center">
+    <div class="col text-center mt-5">
+      <h1 class="mt-5 text-dark text-center">Pleas wait.... <br> while your logging out ...</h1>
+    
+    </div> 
+     <!-- <img src="https://open.assembly.go.kr/images/ajax_loader.gif" alt=""> -->
+      <div class="col text-center justify-content-evently mt-4">
+      <img width="250px" 
+        src="https://cdn.dribbble.com/users/1797873/screenshots/5310497/logout.gif" alt="">
+      </div>
+    </div>
+    
+    <!--delete successMsg -->
+    <div *ngIf="deleteSuccessMsg" style="width: 100%;height: 100vh;" class="d-flex justify-content-center">
+        <h1 class="mt-5 text-danger text-center">{{deleteSuccessMsg}}</h1>
+      </div>
+      
+      <!-- delete confirm child -->
+      <!-- <app-delete-confirm (onDelete)="deleteFromParent()" (onCancel)="cancelDeleteConfirm()" [deleteUserAcnt]="userdelete"></app-delete-confirm> -->
+      <app-delete-confirm  (onDelete)="deleteFromParent()" (onCancel)="cancelDeleteConfirm()" [deleteUserAcnt]="userdelete"></app-delete-confirm>
+      <!-- <app-delete-confirm  (onDelete)="deleteFromParent1()" (onCancel)="cancelDeleteConfirm()" [deleteExperince]="userdelete"></app-delete-confirm> -->
+     
+        
+    <!-- Navigation-->
+    
+    <ng-container *ngIf="!deleteConfirmStatus" >
+        <!-- *ngIf="!deleteConfirmStatus" -->
+        <div *ngIf="!logoutStatus"  >
+            <!-- *ngIf="!logoutStatus" -->
+            <nav  *ngIf="!deleteConfirmStatus" class="navbar navbar-expand-lg  bg-warning ">
+                <!-- *ngIf="!deleteConfirmStatus" -->
+                <!-- navbar -->
+                
+                <div class="container px-4 px-lg-5">
+                         <a style="margin-left: -120px;" class="navbar-brand" routerLink=""> <img style="width: 50px; height: 50px;"
+                                src="https://media.istockphoto.com/id/1368731656/vector/letter-r-beauty-flower-logo-with-creative-concept-for-company-business-decorative-flower.jpg?s=612x612&w=0&k=20&c=31hDWiML_VvjR6P_nUk2c17fn6KkmtbNtIg5KShTDiU="
+                                alt="resume-img"> RESUMATE</a>
+                
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                                class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                                <li class="nav-item">
+                                </li>
+                            </ul>
+                            <form class="d-flex align-items-center">
+                                <!-- contact us -->
+                                <a class="btn text-light" (click)="deleteAccount()">
+                                    <i class="fa-solid fa-trash fa-shake text-danger"></i>                                
+                                    DELETE
+                                </a>
+                                <!-- login --> 
+                               <!-- <div *ngIf="!loginsuccess">
+                                    <a class="btn text-light" routerLink="/login">
+                                        <i class="fa-solid fa-user fa-beat text-dark"></i>
+                                        LOG IN
+                                        <span class="badge bg-light text-dark ms-1 rounded-pill"></span>
+                                    </a>
+                               </div> -->
+                
+                               <div >
+                                <a (click)="templogout()" class="btn text-light" routerLink="/login">
+                                    <i class="fa-solid fa-user fa-beat text-dark"></i>
+                                    LOG OUT
+                                    <span class="badge bg-light text-dark ms-1 rounded-pill"></span>
+                                </a>
+                           </div>
+                           
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            
+
+<!-- second tempelete -->
+<div class="col-4" style="margin-left: 250px;">
+    <form class="column2 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="left_div">
+                        <img class="rounded-circle"
+                            style="width: 150px;height: 150px;margin-top: 50px;margin-left: 20px;"
+                            src="https://cutewallpaper.org/24/person-icon-png/person-icons-gray-free-transparent-png-download-pngkey.png"
+                            alt="person_img">
+                        <hr>
+                        <div *ngFor="let skill of skilldetails" >
+                            <h6 style="font-size: 20px;" class="text-center text-light">SKILLS</h6>
+                            <ul class="list-group">
+                                <li style="font-size: 15px;" class="list-group-items skills">{{skill.skill}}</li>
+                                <!-- <li class="list-group-items skills">Team Work</li>
+                                <li class="list-group-items skills">Sales Expertise</li>
+                                <li class="list-group-items skills">Inventary Management</li> -->
+    
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div  class=" temp2 col-6 mt-4">
+                   <div *ngFor="let detail of headerdetails" class="row"   >
+                       <!-- <div > -->
+                            <h3>{{detail.firstname}}</h3>
+                            <h6 class="place"><i class="fa-sharp fa-solid fa-location-dot"></i> New Delhi, India ,112345
+                                </h6>
+                                <h6 class="place"><i class="fa-solid fa-mobile"></i> +91 9865365896 </h6>
+                                <h6 class="place"><i class="fa-sharp fa-solid fa-envelope"></i> priya@gmail.com</h6>
+                       <!-- </div> -->
+                        
+                   </div>
+
+                    <h4 class="heading mt-4">SUMMERY</h4>
+                    <p class="summery">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae, id ex a
+                        similique rerum, impedit placeat quis, doloribus accusantium error quisquam maiores ab
+                        ratione dolores earum. Laboriosam totam repudiandae voluptates?</p>
+                    <br>
+                    <h4 class="heading">EXPERIENCE</h4>
+                    <p class="experience">2-7-200 - current</p>
+                    <h6 class="retail_associate">Retail sales Associate <span style="font-size: 18px;">ZARA</span></h6>
+                    <ul class="list-group">
+                        <!-- <li class="list-group-items">Lorem ipsum, dolor sit amet consectetur adipisicing elit
+                        </li>
+                        <li class="list-group-items">Lorem ipsum, dolor sit amet consectetur adipisicing elit
+                        </li>
+                        <li class="list-group-items">Lorem ipsum, dolor sit amet consectetur adipisicing elit
+                        </li> -->
+                        <h6 class="retail_associate">City,Country</h6>
+                        <br>
+                        <h4 class="heading">EDUCATION</h4>
+                        <p class="education" style="margin-left: 20px;">Schoolname,school location</p>
+                        <p class="diploma">Qualification-Field of Study</p>
+                        <p class="diploma">Year of Graduation</p>
+                        <br>
+                        <h4 class="heading">Intrest and Hobbies</h4>
+                        <ul class="list-group">
+                            <p class="recreate">Recreate Football League</p>
+                            <li class=" intrest list-group-items ms-5">Team Captian</li>
+                            <li class="intrest list-group-items ms-5">Two Time League Champion </li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-2 text-center mt-4">
+            <input class="btn btn-dark btn-lg borderx " type="submit" value="Back"  routerLink="/skills"/>
+            <input (click)="printpage()" class="btn btn-danger btn-lg ms-5 text-light" type="submit" value="Download" />
+        
+          </div>
+    </form>
+</div>

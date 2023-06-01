@@ -1,0 +1,147 @@
+<section class="vh-100 body">
+<div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <h1 class="ms-3  text-center fw-bolder">Let's start with your <span class="text-danger">header</span></h1>
+
+      <div class="col-12 col-lg-9 col-xl-7">
+
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px">
+          <div class="card-body p-4 p-md-5">
+            <form [formGroup]="headerdetailForm" (ngSubmit)="headerdetail()">
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <label class="form-label" for="firstName">First Name</label>
+                    <input formControlName="firstname" name="firstname" type="text" id="firstName"
+                      class="form-control form-control-lg" />
+                  </div>
+
+
+                    <!-- firstname error msg -->
+                <div
+                *ngIf="this.headerdetailForm.get('firstname')?.errors&&this.headerdetailForm.get('firstname')?.touched"
+                class="text-danger mb-3">Invalid Firstname</div>
+                </div>
+
+              
+
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <label class="form-label" for="lastName">Last Name</label>
+                    <input formControlName="lastname" name="lastname" type="text" id="lastName"
+                      class="form-control form-control-lg" />
+                  </div>
+
+                   <!-- lastname error msg -->
+              <div *ngIf="this.headerdetailForm.get('lastname')?.errors&&this.headerdetailForm.get('lastname')?.touched"
+              class="text-danger mb-3">Invalid Lastname</div>
+
+
+                </div>
+              </div>
+             
+
+              <div class="row">
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                  <div style="margin-top: -30px;" class="form-outline datepicker w-100">
+                    <label for="birthdayDate" class="form-label">City</label>
+                    <input formControlName="city" name="city" type="text" class="form-control form-control-lg"
+                      id="birthdayDate" />
+                  </div>
+
+                  
+                     
+                </div>
+                <!-- city error msg -->
+                <div *ngIf="this.headerdetailForm.get('city')?.errors&&this.headerdetailForm.get('city')?.touched"
+                class="text-danger mb-3">Invalid City</div>
+
+
+   
+
+                <div class="col-md-6 mb-4">
+                  <div class="row">
+
+                    <div class="form-outline datepicker w-50">
+                      <label for="birthdayDate" class="form-label">Country</label>
+                      <input formControlName="country" name="country" type="text" class="form-control form-control-lg"
+                        id="birthdayDate" />
+                    </div>
+                     <!-- country error msg -->
+                     <div *ngIf="this.headerdetailForm.get('country')?.errors&&this.headerdetailForm.get('country')?.touched"
+                     class="text-danger mb-3">Invalid Country</div>
+   
+                    <div class="col-6 mb-4">
+                      <div class="form-outline datepicker w-100">
+                        <label for="birthdayDate" class="form-label">Pin Code</label>
+                        <input formControlName="pincode" name="pincode" type="text" class="form-control form-control-lg"
+                          id="birthdayDate" />
+                      </div>
+                    </div>
+
+                     <!-- pincode error msg -->
+                     <div *ngIf="this.headerdetailForm.get('pincode')?.errors&&this.headerdetailForm.get('pincode')?.touched"
+                     class="text-danger mb-3">Invalid pincode</div>
+   
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <label class="form-label" for="emailAddress">Phone Number</label>
+                    <input formControlName="phonenumber" name="phonenumber" type="text"
+                      class="form-control form-control-lg" />
+                  </div>
+
+                </div>
+                                     <!-- phone number error msg -->
+                                     <div *ngIf="this.headerdetailForm.get('phonenumber')?.errors&&this.headerdetailForm.get('phonenumber')?.touched"
+                                     class="text-danger mb-3">Invalid PhoneNumber</div>
+                   
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                    <label class="form-label" for="phoneNumber">E-Mail</label>
+                    <input formControlName="email" name="email" type="text" id="phoneNumber"
+                      class="form-control form-control-lg" />
+                  </div>
+                                       <!-- email error msg -->
+                                       <div *ngIf="this.headerdetailForm.get('email')?.errors&&this.headerdetailForm.get('email')?.touched"
+                                       class="text-danger mb-3">Invalid Email</div>
+                     
+
+                </div>
+              </div>
+
+                               <!-- headerdetail ErrorMsg -->
+                               <div class="mt-5 mb-2 text-danger fw-bolder">{{headerdetailErrorMsg}}</div>
+
+
+              <div class="pt-2 text-center mt-4">
+                <input class="btn btn-danger btn-lg borderx " type="submit" value="Back" routerLink="/templates" />
+                <input class="btn btn-dark btn-lg ms-5 text-light" type="submit" value="Continue" />
+
+              </div>
+
+
+
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
